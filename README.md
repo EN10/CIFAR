@@ -30,7 +30,7 @@ save an image form cifar as jpg
 
 load `batches.meta` label_names (classes) and print them  
 
-* `filter.py` 
+* `filter_class.py` 
 
 write cats index from `data_batch_1` to cats.txt
 

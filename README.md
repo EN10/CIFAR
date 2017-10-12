@@ -15,13 +15,12 @@ There are 50000 training images and 10000 test images.
 
     tar -xvzf cifar-10-python.tar.gz
 
-[Batch to Array](https://gist.github.com/juliensimon/273bef4c5b4490c687b2f92ee721b546)
-
 **Files:**
 
 * `cifar_array.py`
 
 load `data_batch_1` data (images) and labels (classes) into a np.array  
+[Batch to Array](https://gist.github.com/juliensimon/273bef4c5b4490c687b2f92ee721b546)
 
 * `classes.py` 
 

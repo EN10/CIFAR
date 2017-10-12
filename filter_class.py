@@ -1,9 +1,9 @@
 from load_cifar import load
 
 def write(labelarray):
-    f = open('automobiles.txt','w')
+    f = open('cats.txt','w')
     for i in range(0,10000):
-        if (labelarray[i] == 1):
+        if (labelarray[i] == 3):
             f.write(str(i)+"\n")
     f.close()
 

@@ -10,4 +10,4 @@ images = dict['data']
 images = np.reshape(images, (10000, 3, 32, 32))
 
 from scipy.misc import imsave
-imsave('image.jpg', images[46])     # image no 46
+imsave('image.jpg', images[9])     # image no #

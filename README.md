@@ -5,39 +5,29 @@ There are 50000 training images and 10000 test images.
 
 [CIFAR](https://www.cs.toronto.edu/~kriz/cifar.html)  
 
-**Download**  
+### Download
 
     wget -c https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz
 
 * [CIFAR 10 Python](https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz)
 
-**Extract**  
+### Extract
 
     tar -xvzf cifar-10-python.tar.gz
 
-**Files:**
+### Files:
 
-* `cats.py`
-[Based on DL.ai cats.py ](https://github.com/EN10/DL.ai/blob/master/w2/cats.py)
+* `cats.py` : [Based on DL.ai cats.py ](https://github.com/EN10/DL.ai/blob/master/w2/cats.py)
 
-* `load_cifar.py`
+* `load_cifar.py` : load `data_batch_1` data (images) and labels (classes) into a np.array 
 
-load `data_batch_1` data (images) and labels (classes) into a np.array  
-[Batch to Array](https://gist.github.com/juliensimon/273bef4c5b4490c687b2f92ee721b546)
+* `imsave.py` : save an image from CIFAR-10 as JPG
 
-* `imsave.py`
+* `classe_lables.py` : load `batches.meta` label_names (classes) and print them  
 
-save an image from CIFAR-10 as JPG
+* `filter_class.py` : write class label index from `data_batch_1` to class_label.txt
 
-* `classe_lables.py` 
-
-load `batches.meta` label_names (classes) and print them  
-
-* `filter_class.py` 
-
-write class label index from `data_batch_1` to class_label.txt
-
-**Classes:**  
+### Classes:
 
 0 : airplane  
 1 : automobile  
@@ -49,3 +39,7 @@ write class label index from `data_batch_1` to class_label.txt
 7 : horse  
 8 : ship  
 9 : truck  
+
+### Ref:
+
+[Batch to Array Code](https://gist.github.com/juliensimon/273bef4c5b4490c687b2f92ee721b546)

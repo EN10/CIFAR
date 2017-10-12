@@ -26,7 +26,7 @@ load `data_batch_1` data (images) and labels (classes) into a np.array
 
 save an image form cifar as jpg
 
-* `classes.py` 
+* `classe_lables.py` 
 
 load `batches.meta` label_names (classes) and print them  
 

@@ -24,7 +24,7 @@ load `data_batch_1` data (images) and labels (classes) into a np.array
 
 * `imsave.py`
 
-save an image form cifar as jpg
+save an image from CIFAR-10 as JPG
 
 * `classe_lables.py` 
 
@@ -32,7 +32,7 @@ load `batches.meta` label_names (classes) and print them
 
 * `filter_class.py` 
 
-write cats index from `data_batch_1` to cats.txt
+write class label index from `data_batch_1` to class_label.txt
 
 **Classes:**  
 

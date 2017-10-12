@@ -10,11 +10,9 @@ def load():
     images = dict['data']
     #images = np.reshape(images, (10000, 3, 32, 32))
     labels = dict['labels']
-    imagearray = np.array(images)
-    labelarray = np.array(labels)
+    imagearray = np.array(images)   #   (10000, 3072)
+    labelarray = np.array(labels)   #   (10000,)
     
-    #print imagearray.shape
-    #print labelarray.shape
-    return labelarray       # used in filter, adjust as necessary 
-    
-# load()
+    return imagearray, labelarray   #   used in filter, adjust as necessary 
+
+#load()

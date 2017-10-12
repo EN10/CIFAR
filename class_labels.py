@@ -1,9 +1,9 @@
 def load_classes():
     import cPickle
     path = 'cifar-10-batches-py/'
-    bm = 'batches.meta'
+    file = 'batches.meta'
     
-    f = open(path+bm, 'rb')
+    f = open(path+file, 'rb')
     dict = cPickle.load(f)
     return dict['label_names']
 

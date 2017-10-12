@@ -7,9 +7,9 @@ def load_classes():
     dict = cPickle.load(f)
     return dict['label_names']
 
-def print_classes(classes):
+def print_classes(label_names):
     for i in range(0, 10):
-        print str(i) + " : " + classes[i] + "  "
+        print str(i) + " : " + label_names[i] + "  "
 
-ln = load_classes()
-print_classes(ln)
+label_names = load_classes()
+print_classes(label_names)

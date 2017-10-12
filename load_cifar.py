@@ -13,6 +13,6 @@ def load():
     imagearray = np.array(images)   #   (10000, 3072)
     labelarray = np.array(labels)   #   (10000,)
     
-    return imagearray, labelarray   #   used in filter, adjust as necessary 
+    return imagearray, labelarray
 
 #load()

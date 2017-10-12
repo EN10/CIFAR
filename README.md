@@ -19,9 +19,17 @@ There are 50000 training images and 10000 test images.
 
 **Files:**
 
-cifar_array.py - load `data_batch_1` data (images) and labels (classes) into a np.array  
-classes.py - load `batches.meta` label_names (classes) and print them  
-cats.py - write cats index from `data_batch_1` to cats.txt
+* `cifar_array.py`
+
+load `data_batch_1` data (images) and labels (classes) into a np.array  
+
+* `classes.py` 
+
+load `batches.meta` label_names (classes) and print them  
+
+* `cats.py` 
+
+write cats index from `data_batch_1` to cats.txt
 
 **Classes:**  
 

@@ -13,5 +13,5 @@ def read():
     print text
     f.close()
 
-ia, la = load()
+_ , la = load()
 write(la)

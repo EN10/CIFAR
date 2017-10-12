@@ -11,5 +11,5 @@ def print_classes(classes):
     for i in range(0, 10):
         print str(i) + " : " + classes[i] + "  "
 
-c = load_classes()
-print_classes(c)
+ln = load_classes()
+print_classes(ln)

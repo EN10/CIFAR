@@ -13,5 +13,5 @@ def read():
     print text
     f.close()
 
-_ , la = load()
-write(la)
+_ , labelarray = load()
+write(labelarray)

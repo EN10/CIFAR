@@ -15,6 +15,6 @@ def load():
     
     #print imagearray.shape
     #print labelarray.shape
-    return labelarray
+    return labelarray       # used in filter, adjust as necessary 
     
 # load()

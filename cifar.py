@@ -23,6 +23,6 @@ def output():
     
 def classes():
     for i in range(0, 10):
-        print str(i) + " : " + categories[i]
+        print str(i) + " : " + categories[i] + "  "
 
-output()
+classes()

@@ -16,3 +16,16 @@ There are 50000 training images and 10000 test images.
     tar -xvzf cifar-10-python.tar.gz
 
 [Batch to Array](https://gist.github.com/juliensimon/273bef4c5b4490c687b2f92ee721b546)
+
+**Classes:**  
+
+0 : airplane  
+1 : automobile  
+2 : bird  
+3 : cat  
+4 : deer  
+5 : dog  
+6 : frog  
+7 : horse  
+8 : ship  
+9 : truck  

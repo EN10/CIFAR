@@ -3,11 +3,29 @@ from load_cifar import load_batch
 import numpy as np
 
 imagearray, labelarray = load_batch()
-print imagearray.shape          #   (10000, 3072)   3072 = 3, 32, 32
+#print imagearray.shape          #   (10000, 3072)   3072 = 3, 32, 32
+#print labelarray.shape          #   (10000,)
 
-print imagearray[0]
-imagearray = imagearray/255.    # 0-255 -> 0-1
-print imagearray[0]
+train_set_x = np.empty((200,3072))
+train_set_y = np.empty((1,200),dtype=np.int16)
+
+for i in range(0,199):
+    train_set_x[i] = imagearray[i]
+    train_set_y[0,i] = labelarray[i]
+
+test_set_x = np.empty((50,3072))
+test_set_y = np.empty((1,50),dtype=np.int16)
+
+for i in range(0,49):
+    test_set_x[i] = imagearray[i+300]
+    test_set_y[0,i] = labelarray[i+300]
+
+#compare to w2 cats
+print train_set_x.shape
+print train_set_y.shape
+
+train_set_x = train_set_x/255.  # 0-255 -> 0-1
+test_set_x = test_set_x/255.
 
 def sigmoid(z):
 

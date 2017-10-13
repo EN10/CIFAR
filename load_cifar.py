@@ -1,7 +1,7 @@
 import cPickle
 import numpy as np
 
-def load():
+def load_batch():
     path = 'cifar-10-batches-py/'
     file = 'data_batch_1'
 

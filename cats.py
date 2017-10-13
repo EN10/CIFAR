@@ -1,19 +1,13 @@
 from __future__ import division
+from load_cifar import load_batch
 import numpy as np
 
-# Loading the data (cat/non-cat)
-train_set_x_orig, train_set_y, test_set_x_orig, test_set_y, classes = load_dataset()
+imagearray, labelarray = load_batch()
+print imagearray.shape          #   (10000, 3072)   3072 = 3, 32, 32
 
-m_train = train_set_x_orig.shape[0]     #   209
-m_test = test_set_x_orig.shape[0]       #   50
-num_px = train_set_x_orig.shape[1]      #   64
-
-# 12288 = 64 * 64 * 3   x * y * rgb
-train_set_x_flatten = train_set_x_orig.reshape(train_set_x_orig.shape[0], -1).T     #   (12288, 209)
-test_set_x_flatten = test_set_x_orig.reshape(test_set_x_orig.shape[0], -1).T        #   (12288, 50)
-
-train_set_x = train_set_x_flatten/255.  # 0-255 -> 0-1
-test_set_x = test_set_x_flatten/255.
+print imagearray[0]
+imagearray = imagearray/255.    # 0-255 -> 0-1
+print imagearray[0]
 
 def sigmoid(z):
 

@@ -12,6 +12,8 @@ train_set_y = np.empty((1,200),dtype=np.int16)
 for i in range(0,199):
     train_set_x[i] = imagearray[i]
     train_set_y[0,i] = labelarray[i]
+    
+train_set_x = train_set_x.T     #   (3072, 200)
 
 test_set_x = np.empty((50,3072))
 test_set_y = np.empty((1,50),dtype=np.int16)
@@ -20,9 +22,7 @@ for i in range(0,49):
     test_set_x[i] = imagearray[i+300]
     test_set_y[0,i] = labelarray[i+300]
 
-#compare to w2 cats
-print train_set_x.shape
-print train_set_y.shape
+test_set_x = test_set_x.T       #   (3072, 50)
 
 train_set_x = train_set_x/255.  # 0-255 -> 0-1
 test_set_x = test_set_x/255.
@@ -48,6 +48,8 @@ def propagate(w, b, X, Y):
     m = X.shape[1]
     
     A = sigmoid(np.dot(w.T,X)+b)                        # compute activation
+    print Y
+    print A
     cost = -1/m*np.sum(Y*np.log(A)+(1-Y)*np.log(1-A))   # compute cost
     
     # BACKWARD PROPAGATION (TO FIND GRAD)

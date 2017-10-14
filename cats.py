@@ -1,28 +1,48 @@
 from __future__ import division
 from load_cifar import load_batch
 import numpy as np
+import random
 
 imagearray, labelarray = load_batch()
 #print imagearray.shape          #   (10000, 3072)   3072 = 3, 32, 32
 #print labelarray.shape          #   (10000,)
-
 train_set_x = np.empty((200,3072))
 train_set_y = np.empty((1,200),dtype=np.int16)
 
-for i in range(0,199):
-    train_set_x[i] = imagearray[i]
-    train_set_y[0,i] = labelarray[i]
+i = 0
+j = 0
+while (j < 200):                #   200 train images
+    x = random.randint(0,1)
+    if (labelarray[i] == 3):    #   Cats
+        train_set_x[j] = imagearray[i]
+        train_set_y[0,j] = 1
+        j+=1
+    elif (x % 2 == 0 and labelarray[i] != 3):   #    NOT Cats
+        train_set_x[j] = imagearray[i]
+        train_set_y[0,j] = 0
+        j+=1
+    i+=1
     
-train_set_x = train_set_x.T     #   (3072, 200)
+train_set_x = train_set_x.T     #   Reshape to (3072, 200) 
 
 test_set_x = np.empty((50,3072))
 test_set_y = np.empty((1,50),dtype=np.int16)
 
-for i in range(0,49):
-    test_set_x[i] = imagearray[i+300]
-    test_set_y[0,i] = labelarray[i+300]
+i = 0
+j = 0
+while (j < 50):
+    x = random.randint(0,1)
+    if (labelarray[9999-i] == 3):
+        test_set_x[j] = imagearray[9999-i]
+        test_set_y[0,j] = 1
+        j+=1
+    elif (x % 2 == 0 and labelarray[i] != 3):
+        test_set_x[j] = imagearray[9999-i]
+        test_set_y[0,j] = 0
+        j+=1
+    i+=1
 
-test_set_x = test_set_x.T       #   (3072, 50)
+test_set_x = test_set_x.T       #   Reshape to (3072, 50)
 
 train_set_x = train_set_x/255.  # 0-255 -> 0-1
 test_set_x = test_set_x/255.
@@ -47,8 +67,8 @@ def propagate(w, b, X, Y):
     
     m = X.shape[1]
     
-    A = sigmoid(np.dot(w.T,X)+b)                        # compute activation
-    cost = -1/m*np.sum(Y*np.log(A)+(1-Y)*np.log(1-A))   # compute cost
+    A = sigmoid(np.dot(w.T,X)+b)                                            # compute activation
+    cost = (1./m) * (-np.dot(Y,np.log(A).T) - np.dot(1-Y, np.log(1-A).T))   # compute cost
     
     # BACKWARD PROPAGATION (TO FIND GRAD)
     dw = 1/m * np.dot(X,(A-Y).T)
@@ -153,5 +173,5 @@ def model(X_train, Y_train, X_test, Y_test, num_iterations = 2000, learning_rate
     return d
     
 if __name__ == '__main__':
-    
     d = model(train_set_x, train_set_y, test_set_x, test_set_y, num_iterations = 2000, learning_rate = 0.005, print_cost = True)
+    #predict(d["w"], d["b"], x)

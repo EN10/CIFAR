@@ -17,7 +17,7 @@ There are 50000 training images and 10000 test images.
 
 ### Files:
 
-* `cats.py` : [Based on DL.ai cats.py ](https://github.com/EN10/DL.ai/blob/master/w2/cats.py)
+* `sigmoid.py` : [Based on DL.ai cats.py ](https://github.com/EN10/DL.ai/blob/master/w2/cats.py)
 
 * `load_cifar.py` : load `data_batch_1` data (images) and labels (classes) into a np.array 
 

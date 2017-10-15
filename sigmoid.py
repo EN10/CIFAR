@@ -3,9 +3,12 @@ from load_cifar import *
 import numpy as np
 
 imagearray, labelarray = load_batch()
-#print imagearray.shape          #   (10000, 3072)   3072 = 3, 32, 32
-#print labelarray.shape          #   (10000,)
+#print imagearray.shape         #   (10000, 3072)   3072 = 3, 32, 32
+#print labelarray.shape         #   (10000,)
+
 train_set_x, train_set_y, test_set_x, test_set_y = create_datasets(imagearray, labelarray)
+#print train_set_x.shape        #   (3072, 200)
+#print train_set_y.shape        #   (1, 200)
 
 def sigmoid(z):
 

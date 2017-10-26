@@ -1,6 +1,7 @@
 import cPickle
 import numpy as np
 import random
+random.seed(1) # set a seed so that the results are consistent
 
 def load_batch():
     path = 'cifar-10-batches-py/'

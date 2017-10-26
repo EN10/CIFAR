@@ -27,6 +27,12 @@ There are 50000 training images and 10000 test images.
 
 * `filter_class.py` : write class label index from `data_batch_1` to class_label.txt
 
+### Accuracy
+`load_cifar.py` uses `random.seed(1)` for consistant accuracy  
+
+    train accuracy: 89.0 %
+    test accuracy: 72.0 %
+
 ### Classes:
 
 0 : airplane  

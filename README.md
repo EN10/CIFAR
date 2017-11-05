@@ -17,7 +17,9 @@ There are 50000 training images and 10000 test images.
 
 ### Files:
 
-* `sigmoid.py` : [Based on DL.ai cats.py ](https://github.com/EN10/DL.ai/blob/master/w2/cats.py)
+* `sigmoid.py` : [Based on DL.ai cats.py](https://github.com/EN10/DL.ai/blob/master/w2/cats.py)
+
+* `5_layer.py:` : [Based on DL.ai 5_layer_model.py](https://github.com/EN10/DL.ai/blob/master/w4/5_layer_model.py)
 
 * `load_cifar.py` : load `data_batch_1` data (images) and labels (classes) into a np.array 
 
@@ -30,8 +32,15 @@ There are 50000 training images and 10000 test images.
 ### Accuracy
 `load_cifar.py` uses `random.seed(1)` for consistant accuracy  
 
+`sigmoid.py:`
+
     train accuracy: 89.0 %
     test accuracy: 72.0 %
+
+`5_layer.py:`
+
+    train accuracy: 99.0 %
+    test accuracy: 70.0 %
 
 ### Classes:
 

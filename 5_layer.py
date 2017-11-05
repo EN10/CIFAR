@@ -222,14 +222,15 @@ def L_layer_model(X, Y, layers_dims, learning_rate = 0.0075, num_iterations = 30
         # Print the cost every 100 training example
         if print_cost and i % 100 == 0:
             print ("Cost after iteration %i: %f" %(i, cost))
-            print("train accuracy: {} %".format(100 - np.mean(np.abs(predict(train_x, train_y, parameters) - train_y)) * 100))
-            print("test accuracy: {} %".format(100 - np.mean(np.abs(predict(test_x, test_y, parameters) - test_y)) * 100))
         if print_cost and i % 100 == 0:
             costs.append(cost)
     
     return parameters
-    
+
 ### CONSTANTS ###
+#print train_x.shape              #   (3072, 200)
 layers_dims = [3072, 20, 7, 5, 1] #  5-layer model
 parameters = L_layer_model(train_x, train_y, layers_dims, num_iterations = 2500, print_cost = True)
 
+print("train accuracy: {} %".format(100 - np.mean(np.abs(predict(train_x, train_y, parameters) - train_y)) * 100))
+print("test accuracy: {} %".format(100 - np.mean(np.abs(predict(test_x, test_y, parameters) - test_y)) * 100))

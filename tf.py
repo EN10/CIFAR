@@ -112,17 +112,11 @@ def model(X_train, Y_train, X_test, Y_test, learning_rate = 0.0001,
         parameters = sess.run(parameters)
         print ("Parameters have been trained!")
 
-        # Calculate the correct predictions
-        correct_prediction = tf.equal(tf.argmax(Z3), tf.argmax(Y))
-
-        # Calculate accuracy on the test set
-        accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
-
-        print("train accuracy: {} %".format(100 - np.mean(np.abs(predict(X_train, parameters) - Y_train)) * 100))
-        print("test accuracy: {} %".format(100 - np.mean(np.abs(predict(X_test, parameters) -  Y_test)) * 100))
-        
         return parameters
 
 imagearray, labelarray = load_batch()
 X_train, Y_train, X_test, Y_test = create_datasets(imagearray, labelarray)
-parameters = model(X_train, Y_train, X_test, Y_test)
+
+parameters = model(X_train, Y_train, X_test, Y_test, num_epochs = 1500)
+print("train accuracy: {} %".format(100 - np.mean(np.abs(predict(X_train, parameters) - Y_train)) * 100))
+print("test accuracy: {} %".format(100 - np.mean(np.abs(predict(X_test, parameters) -  Y_test)) * 100))

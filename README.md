@@ -59,3 +59,8 @@ The dataset is divided into five training batches and one test batch, each with 
 ### Ref:
 
 [Batch to Array Code](https://gist.github.com/juliensimon/273bef4c5b4490c687b2f92ee721b546)
+
+### Compatability
+[imsave.py](https://github.com/EN10/CIFAR/blob/master/imsave.py) uses `from scipy.misc import imsave` which is deprecated  
+this requires `sudo pip install scipy==0.16.1`  
+[save.py](https://github.com/EN10/KerasCIFAR/blob/master/save.py) PIL version

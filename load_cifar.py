@@ -1,4 +1,4 @@
-import cPickle
+import pickle as cPickle
 import numpy as np
 import random
 random.seed(1) # set a seed so that the results are consistent
@@ -8,7 +8,7 @@ def load_batch():
     file = 'data_batch_1'
 
     f = open(path+file, 'rb')
-    dict = cPickle.load(f)
+    dict = cPickle.load(f, encoding='latin1')
     images = dict['data']
     #images = np.reshape(images, (10000, 3, 32, 32))
     labels = dict['labels']
